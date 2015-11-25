@@ -9,6 +9,7 @@ h1 {
 h3 {
   margin-top: 0px;
   margin-bottom: 5px;
+  font-size: 15px;
 }
 
 #feed-view {
@@ -30,10 +31,16 @@ h3 {
 
 #entry-info:hover {
   background-color: #FBFBFB;
+  cursor: default;
 }
 
 #content-snippet {
   display: block;
   color: #B1B1B1;
-  font-size: 13px;
+  font-size: 16px;
+  font-family: 'Adobe Song Std'
+}
+
+#full-content {
+  font-family: 'Adobe Song Std'
 }

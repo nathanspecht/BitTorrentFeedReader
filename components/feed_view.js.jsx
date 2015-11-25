@@ -8,7 +8,7 @@
         <h1>{this.props.feed.title}</h1>
         {
           this.props.feed.entries.map(function(entry) {
-            return <EntryThumb entry={entry}/>;
+            return <EntryThumb entry={entry} key={entry.title}/>;
           })
         }
         </div>
