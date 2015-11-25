@@ -1,0 +1,39 @@
+body {
+  font-family: 'Roboto Slab';
+}
+
+h1 {
+  text-align: center;
+}
+
+h3 {
+  margin-top: 0px;
+  margin-bottom: 5px;
+}
+
+#feed-view {
+  margin: auto;
+  width: 80%;
+}
+
+#entry-thumb {
+  height: 150px;
+  width: 2000px;
+}
+
+#entry-info {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-top: 1px solid #D4D4D4;
+  width: 100%;
+}
+
+#entry-info:hover {
+  background-color: #FBFBFB;
+}
+
+#content-snippet {
+  display: block;
+  color: #B1B1B1;
+  font-size: 13px;
+}
