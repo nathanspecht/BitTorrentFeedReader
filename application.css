@@ -10,6 +10,7 @@ h3 {
   margin-top: 0px;
   margin-bottom: 5px;
   font-size: 15px;
+  display: inline-block;
 }
 
 #feed-view {
@@ -32,6 +33,13 @@ h3 {
 #entry-info:hover {
   background-color: #FBFBFB;
   cursor: default;
+}
+
+#time-ago {
+  font-size: 13px;
+  color: black;
+  padding-left: 15px;
+  font-weight: 300;
 }
 
 #content-snippet {

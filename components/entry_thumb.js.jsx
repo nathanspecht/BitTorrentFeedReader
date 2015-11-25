@@ -22,7 +22,7 @@
       return(
         <div id="entry-info" onClick={this.toggleContent}>
           <h3>{this.props.entry.title}</h3>
-          <TimeAgo date={this.publishedDate()}/>
+          <TimeAgo id="time-ago" date={this.publishedDate()}/>
           {
             this.state.expanded ?
               <div id="full-content">
