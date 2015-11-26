@@ -9,13 +9,13 @@
     rssfeed.setNumEntries(10);
 
     rssfeed.load(function(result){
-      renderFeedView(result.feed);
+      renderFeed(result.feed);
     });
   };
-
-  var renderFeedView = function(feed) {
+  
+  var renderFeed = function(feed) {
     React.render(
-      <FeedView feed={feed}/>,
+      <Feed feed={feed}/>,
       document.getElementById('feed')
     );
   };
