@@ -12,7 +12,7 @@
       renderFeed(result.feed);
     });
   };
-  
+
   var renderFeed = function(feed) {
     React.render(
       <Feed feed={feed}/>,

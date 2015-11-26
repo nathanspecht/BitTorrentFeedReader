@@ -52,3 +52,10 @@ h3 {
 #full-content {
   font-family: 'Adobe Song Std'
 }
+
+#video {
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: block;
+}
