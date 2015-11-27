@@ -3,7 +3,7 @@
 
   root.Entry = React.createClass({
     getInitialState: function() {
-      return {expanded: false};
+      return {expanded: false, read: false};
     },
 
     publishedDate: function() {
@@ -11,7 +11,7 @@
     },
 
     toggleContent: function() {
-      this.setState({expanded: !this.state.expanded});
+      this.setState({expanded: !this.state.expanded, read: true});
     },
 
     fullContent: function() {
@@ -36,24 +36,34 @@
     },
 
     render: function() {
+      var infoClass = "entry-info" +
+                      (this.state.expanded ? " expanded" : ""),
+          infoClick = this.state.expanded ? null : this.toggleContent,
+          showLessClass = "title-extra show-less" + (this.state.expanded ? "" : " hidden");
+
       return(
-        <div id="entry-info"
-             onClick={this.state.expanded ? null : this.toggleContent}>
-          <h3>{this.props.entry.title}</h3>
-          <TimeAgo id="time-ago" date={this.publishedDate()}/>
-          {this.state.expanded ? <p>Show Less</p> : null}
-          {
-            this.state.expanded ?
-              <div id="full-content">
-                <p dangerouslySetInnerHTML={this.fullContent()}></p>
-                <a href={this.props.entry.link}>Visit Site</a>
-                {this.tedVideo()}
-              </div>
-            :
-              <div id="content-snippet">
-                {this.props.entry.contentSnippet}
-              </div>
-          }
+        <div className= {infoClass}
+             onClick={infoClick} >
+          <div className={(this.state.read && !this.state.expanded) ? "read" : ""}>
+            <h3>{this.props.entry.title}</h3>
+            <TimeAgo className="title-extra" date={this.publishedDate()}/>
+            <span className={showLessClass}
+                  onClick={this.toggleContent}>Show Less</span>
+            {
+              this.state.expanded ?
+                <div>
+                  <p dangerouslySetInnerHTML={this.fullContent()}></p>
+                  <a href={this.props.entry.link}>
+                    <p>Visit Site</p>
+                  </a>
+                  {this.tedVideo()}
+                </div>
+              :
+                <p className="snippet">
+                  {this.props.entry.contentSnippet}
+                </p>
+            }
+          </div>
         </div>
       );
 
