@@ -27,7 +27,7 @@
           url            = "https://embed-ssl.ted.com/talks/" +
                            snakeTitle + ".html";
 
-      return <iframe src={url} width="640" height="360"
+      return <iframe src={url} height="360"
                      frameBorder="0" scrolling="no"
                      webkitAllowFullScreen mozallowfullscreen
                      allowFullScreen

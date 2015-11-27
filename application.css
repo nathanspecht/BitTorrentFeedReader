@@ -13,6 +13,17 @@ h3 {
   display: inline-block;
 }
 
+a {
+  color: #B1B1B1;
+  position: relative;
+  text-decoration: none;
+  padding-bottom: 2px;
+}
+
+a:hover {
+  color: #000;
+}
+
 #feed-view {
   margin: auto;
   width: 80%;
@@ -55,6 +66,7 @@ h3 {
 
 #video {
   margin: auto;
+  width: 100%;
   margin-top: 10px;
   margin-bottom: 10px;
   display: block;
