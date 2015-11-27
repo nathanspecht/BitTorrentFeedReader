@@ -1,0 +1,99 @@
+body {
+  font-family: 'Roboto Slab';
+}
+
+h1 {
+  text-align: center;
+}
+
+h3 {
+  margin-top: 0px;
+  margin-bottom: 5px;
+  font-size: 15px;
+  padding-right: 15px;
+  max-width: 75%;
+  float: left;
+  display: inline-block;
+}
+
+a {
+  color: #B1B1B1;
+  position: relative;
+  text-decoration: none;
+  padding-bottom: 2px;
+  display: inline-block;
+}
+
+a:hover {
+  color: #000;
+}
+
+p {
+  font-family: 'Adobe Song Std';
+  font-size: 16px;
+  margin: 0px;
+  clear: both;
+}
+
+#feed-view {
+  margin: auto;
+  width: 80%;
+}
+
+#video {
+  margin: auto;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.title-extra {
+  position: relative;
+  font-size: 13px;
+  color: black;
+  font-weight: 300;
+  padding-right: 15px;
+  float: left;
+  display: inline-block;
+  top: 2px;
+}
+
+.hidden {
+  display: none;
+  opacity: 0;
+}
+
+.title-extra.show-less {
+  cursor: pointer;
+  color: #B1B1B1;
+  float: right;
+}
+
+.show-less:hover {
+  color: black;
+}
+
+.entry-info {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-top: 1px solid #D4D4D4;
+  width: 100%;
+}
+
+.read {
+  opacity: 0.4;
+}
+
+.entry-info:hover {
+  background-color: #FBFBFB;
+}
+
+.entry-info.expanded:hover {
+  background-color: white;
+}
+
+.snippet {
+  display: block;
+  color: #B1B1B1;
+}
