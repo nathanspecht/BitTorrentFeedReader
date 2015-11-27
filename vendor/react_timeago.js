@@ -1,3 +1,6 @@
+// Adapted from React-TimeAGO by naman34
+// https://github.com/nmn/react-timeago
+
 (function(root) {
   'use strict';
 
