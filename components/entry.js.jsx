@@ -3,7 +3,7 @@
 
   root.Entry = React.createClass({
     getInitialState: function() {
-      return {expanded: false, read: false};
+      return {expanded: false, viewed: ""};
     },
 
     publishedDate: function() {
@@ -11,7 +11,7 @@
     },
 
     toggleContent: function() {
-      this.setState({expanded: !this.state.expanded, read: true});
+      this.setState({expanded: !this.state.expanded, viewed: "viewed"});
     },
 
     fullContent: function() {
@@ -30,27 +30,35 @@
 
       return <iframe src={url} height="360"
                      frameBorder="0" scrolling="no"
+                     className="video"
                      webkitAllowFullScreen mozallowfullscreen
-                     allowFullScreen
-                     id="video"></iframe>;
+                     allowFullScreen></iframe>;
     },
 
     render: function() {
-      var infoClass = "entry-info" +
-                      (this.state.expanded ? " expanded" : ""),
-          infoClick = this.state.expanded ? null : this.toggleContent,
-          showLessClass = "title-extra show-less" + (this.state.expanded ? "" : " hidden");
+      var infoClass = "entry-info",
+          infoClick,
+          showLessClass = "title-extra show-less",
+          viewed;
+
+      if (this.state.expanded){
+        infoClass += " expanded";
+      } else {
+        infoClick = this.toggleContent;
+        showLessClass += " hidden";
+        viewed = this.state.viewed; // => "viewed" or ""
+      }
 
       return(
-        <div className= {infoClass}
-             onClick={infoClick} >
-          <div className={(this.state.read && !this.state.expanded) ? "read" : ""}>
+        <div className={infoClass} onClick={infoClick} >
+          <div className={viewed}>
             <h3>{this.props.entry.title}</h3>
             <TimeAgo className="title-extra" date={this.publishedDate()}/>
             <span className={showLessClass}
                   onClick={this.toggleContent}>Show Less</span>
             {
               this.state.expanded ?
+                // full content
                 <div>
                   <p dangerouslySetInnerHTML={this.fullContent()}></p>
                   <a href={this.props.entry.link}>
@@ -59,6 +67,7 @@
                   {this.tedVideo()}
                 </div>
               :
+                // content snippet
                 <p className="snippet">
                   {this.props.entry.contentSnippet}
                 </p>

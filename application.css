@@ -40,7 +40,7 @@ p {
   width: 80%;
 }
 
-#video {
+.video {
   margin: auto;
   width: 100%;
   margin-top: 10px;
@@ -59,11 +59,6 @@ p {
   top: 2px;
 }
 
-.hidden {
-  display: none;
-  opacity: 0;
-}
-
 .title-extra.show-less {
   cursor: pointer;
   color: #B1B1B1;
@@ -77,12 +72,8 @@ p {
 .entry-info {
   padding-top: 10px;
   padding-bottom: 10px;
-  border-top: 1px solid #D4D4D4;
   width: 100%;
-}
-
-.read {
-  opacity: 0.4;
+  border-top: 1px solid #D4D4D4;
 }
 
 .entry-info:hover {
@@ -93,7 +84,15 @@ p {
   background-color: white;
 }
 
+.viewed {
+  opacity: 0.4;
+}
+
 .snippet {
   display: block;
   color: #B1B1B1;
+}
+
+.hidden {
+  display: none;
 }
