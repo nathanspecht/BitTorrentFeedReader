@@ -5,8 +5,8 @@
     // stripAccents from @Tomalak on stackoverflow
     // http://stackoverflow.com/questions/286921/efficiently-replace-all-accented-characters-in-a-string
     stripAccents: function() {
-        var in_chrs   = 'àáâãäçèéêëìíîïñòóôõöùúûüýÿÀÁÂÃÄÇÈÉÊËÌÍÎÏÑÒÓÔÕÖÙÚÛÜÝ',
-            out_chrs  = 'aaaaaceeeeiiiinooooouuuuyyAAAAACEEEEIIIINOOOOOUUUUY',
+        var in_chrs   = 'àáâãäçćèéêëìíîïñòóôõöùúûüýÿÀÁÂÃÄÇÈÉÊËÌÍÎÏÑÒÓÔÕÖÙÚÛÜÝ',
+            out_chrs  = 'aaaaacceeeeiiiinooooouuuuyyAAAAACEEEEIIIINOOOOOUUUUY',
             chars_rgx = new RegExp('[' + in_chrs + ']', 'g'),
             transl    = {},
             lookup    = function(m) { return transl[m] || m; };
