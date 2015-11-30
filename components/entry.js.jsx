@@ -22,7 +22,7 @@
     tedVideo: function() {
       // parse entry title into TED embedded video url
       var title          = this.props.entry.title.toLowerCase().split("|"), // => ["title of video", "author name"]
-          videoTitle     = Util.snakeCase(title[0]), // removes non characters/digits and accents
+          videoTitle     = Util.snakeCase(title[0]), // remove non characters/digits and accents, make snake case
           author         = Util.snakeCase(title[1]),
           snakeTitle     = author + "_" + videoTitle, // => author_name_title_of_video
           url            = "https://embed-ssl.ted.com/talks/" +
@@ -36,21 +36,21 @@
     },
 
     render: function() {
-      var infoClass = "entry-info",
-          infoClick,
+      var entryClass = "entry-info",
+          entryClick,
           showLessClass = "title-extra show-less",
           viewed;
 
       if (this.state.expanded){
-        infoClass += " expanded";
+        entryClass += " expanded";
       } else {
-        infoClick = this.toggleContent;
-        showLessClass += " hidden";
-        viewed = this.state.viewed; // => "viewed" or ""
+        entryClick = this.toggleContent; // the onClick for unexpanded entries will expand them
+        showLessClass += " hidden"; // "Show Less" will be hidden for unexpanded entries
+        viewed = this.state.viewed; // => "viewed" or "" --viewed, unexpanded entries will be grayed out
       }
 
       return(
-        <div className={infoClass} onClick={infoClick} >
+        <div className={entryClass} onClick={entryClick} >
           <div className={viewed}>
             <h3>{this.props.entry.title}</h3>
             <TimeAgo className="title-extra" date={this.publishedDate()}/>
